@@ -1,0 +1,220 @@
+/* ---------- BODY ---------- */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: linear-gradient(135deg, #0f172a, #1e293b); /* deep blue-dark background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #f1f5f9;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---------- FORM ---------- */
+form#crudform {
+    background: linear-gradient(145deg, #1e293b, #334155); /* gradient card */
+    padding: 40px 45px;
+    border-radius: 20px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.7),
+        0 10px 25px rgba(59, 130, 246, 0.3);
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+
+    border-left: 8px solid #3b82f6;  /* neon blue accent */
+    border-top: 4px solid #60a5fa;
+    border-right: 8px solid #3b82f6;
+    border-bottom: 4px solid #60a5fa;
+    animation: slideIn 0.8s ease-out;
+}
+
+/* ---------- LABELS ---------- */
+form#crudform label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+
+    /* Gradient text for label */
+    background: linear-gradient(90deg, #3b82f6, #22c55e, #10b981, #facc15, #f97316); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+form#crudform label:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- HEADING ---------- */
+h1 {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+
+    /* Gradient color */
+    background: linear-gradient(90deg, #facc15, #22c55e, #3b82f6, #6366f1); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    transition: all 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------- INPUTS & SELECT ---------- */
+form#crudform input,
+form#crudform select {
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 1px solid #475569;
+    font-size: 1rem;
+    width: 100%;
+    background: #1e293b;   /* dark input background */
+    color: #e2e8f0 !important; /* bright text for high visibility */
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.8); /* sharp outline shadow, no blur */
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Placeholder color */
+form#crudform input::placeholder {
+    color: #94a3b8 !important;  /* brighter placeholder */
+    font-style: italic;
+}
+
+/* Focus effect */
+form#crudform input:focus,
+form#crudform select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+    outline: none;
+    color: #e2e8f0 !important;  /* keep bright text on focus */
+    background: #1f2937;        /* slightly lighter background */
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.8); /* sharp outline shadow on focus */
+}
+/* ---------- BUTTONS ---------- */
+form#crudform button {
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #fff;
+    width: 100%;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.45);
+}
+
+form#crudform button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(59, 130, 246, 0.55);
+}
+
+/* Cancel Button */
+form#crudform button#cancelBtn {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.45);
+}
+
+/* ---------- LOAD BUTTON ---------- */
+#loadbtn {
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #fff;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.45);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#loadbtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(16, 185, 129, 0.55);
+    background: linear-gradient(135deg, #059669, #10b981);
+}
+
+/* ---------- TABLE ---------- */
+table {
+    width: 88%;
+    border-collapse: collapse;
+    background: #1e293b;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.65),
+        0 8px 20px rgba(59, 130, 246, 0.3);
+    margin-bottom: 50px;
+    animation: fadeInTable 1.2s ease-in-out;
+}
+
+@keyframes fadeInTable {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- TABLE HEADER ---------- */
+thead {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: #ffffff;
+}
+
+thead th {
+    padding: 16px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- TABLE BODY ---------- */
+tbody tr:nth-child(even) {
+    background: #334155;
+}
+
+tbody td {
+    padding: 14px;
+    border-bottom: 1px solid #475569;
+    color: #f1f5f9;
+}
+
+tbody tr:hover {
+    background: #475569;
+    transition: 0.3s ease;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width: 600px) {
+    form#crudform,
+    table {
+        width: 95%;
+    }
+    #loadbtn {
+        width: 95%;
+    }
+}
